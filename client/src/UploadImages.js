@@ -39,7 +39,7 @@ function UploadImages(){
     return (
         <form>
             <label htmlFor="imageUpload">Choose an image:</label>
-            <input type = "file" accept = "image/*" name="photo" onChange={onImageChage}/>
+            <input type = "file" accept = "image/*" onChange={onImageChage}/>
         </form>
     )
 }

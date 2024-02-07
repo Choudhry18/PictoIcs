@@ -1,6 +1,7 @@
 from flask import Flask,jsonify,request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_cors import CORS
+from ParseData.py import parseData
 
 #This had to be changed in flaskuploads.py |from werkzeug import secure_filename,FileStorage|
 #from werkzeug.utils import secure_filename
@@ -30,6 +31,7 @@ def upload_file():
 
     if file:
         filename = photos.save(file)
+        data = parseData("uploads/" + filename)
         return f'File {filename} uploaded successfully', 200
 
 if __name__ == "__main__":
